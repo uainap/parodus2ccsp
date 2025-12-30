@@ -134,8 +134,8 @@ static void connect_parodus()
 	    	}
 	}
 	/* CID-71358 CID-55326 Resource leak fix */
-		WAL_FREE(parodus_url);
-		WAL_FREE(client_url);
+		//WAL_FREE(parodus_url);
+		//WAL_FREE(client_url);
 }
 
 //set global conn status and to awake waiting getter threads
@@ -198,7 +198,7 @@ static void parodus_receive()
 				}
 				else {
 					/* CID-59824 Resource leak fix */
-					WAL_FREE(res_wrp_msg);
+					//WAL_FREE(res_wrp_msg);
 					WalError("Memory not allocated for response headers\n");
 					return;
 				}	
@@ -222,7 +222,7 @@ static void parodus_receive()
 								{
 									/* CID-334851 Resource leak fix */
 									WalInfo("Deallocating memory for non processing response headers\n");
-									WAL_FREE(res_headers);
+									//WAL_FREE(res_headers);
 								}
                          }
 			 else if(res_headers != NULL)
@@ -292,8 +292,8 @@ static void parodus_receive()
 					}
 				}
 				/* CID-273897 Resource leak fix */
-				WAL_FREE(sourceService);
-				WAL_FREE(sourceApplication);
+				//WAL_FREE(sourceService);
+				//WAL_FREE(sourceApplication);
 	
 				wrp_free_struct (wrp_msg);
             }
